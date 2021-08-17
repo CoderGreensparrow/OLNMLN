@@ -13,14 +13,16 @@ function run(code='wCode autwofilled.',console_output_q=false){
     let i=0
     let char=code[i]
     let STACK=[]
-    while(char!='s'||i<code.length){
+    while(char!='s'&&i<code.length){
         let output=''
-        if(char=='ˇ'){
+        if(char=='\u02C7'){
             i++
-            STACK.push(code[i])
+            if(code[i]=='{'){STACK.push('\n')}
+            else if(code[i]=='}'){STACK.push('\t')}
+            else{STACK.push(code[i])}
         }else if(char=='p'){
             chars=''
-            for(let _;_<4;_++){
+            for(let _=0;_<4;_++){
                 i++
                 chars+=code[i]
             }
@@ -56,7 +58,7 @@ function run(code='wCode autwofilled.',console_output_q=false){
         }else if(char=='d'){
             n=STACK.pop()
             if(n<=0&&isNaN(n)!=true){i++}
-        }else if{char=='n'}{
+        }else if(char=='n'){
             n=STACK.pop()
             i+=n
         }else if(char=='>'){
@@ -65,15 +67,19 @@ function run(code='wCode autwofilled.',console_output_q=false){
             if(parseFloat(n)!=undefined){STACK.push(parseFloat(n))}else{STACK.push(n)}
         }else if(char=='w'){
             chars=''
-            for(let _;_<8;_++){
+            for(let _=0;_<8;_++){
                 i++
                 chars+=code[i]
             }output+=chars
-        }//TODO
+        }else if(char=='j'){
+            chars=''
+            for(let _=0;_<4;_++){
+                i++
+                chars+=code[i]
+            }i+=parseFloat(chars)-5
+        }
         out(output)
         i++
         char=code[i]
-    }else{
-        out('\nProgram stopped\nExit code 0')
     }
 }
