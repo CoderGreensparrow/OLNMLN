@@ -97,14 +97,11 @@ function run(code='wCode autwofilled.',console_output_q=false){
             STACK.push(parseFloat(STACK.pop()))
         }else if(char==')'){
             STACK.push(String(STACK.pop()))
-        }else{
-            if(64<char.charCodeAt(0)<91){
-                let found_pair=false
-                for(let j=0;j<code.length;j++){
-                    if(char==code[j]&&j!=i){
-                        i=j
-                        break
-                    }
+        }else if(64<char.charCodeAt(0)<91){
+            for(let j=0;j<code.length;j++){
+                if(char==code[j]&&j!=i){
+                    i=j
+                    break
                 }
             }
         }
