@@ -32,7 +32,7 @@ function run(code='wCode autwofilled.',console_output_q=false){
         }else if(char=='i'){
             STACK.reverse()
         }else if(char=='c'){
-            STACK.push(STACK[-0])
+            STACK.push(STACK[STACK.length-1])
         }else if(char=='+'){
             n1=STACK.pop()
             n2=STACK.pop()
