@@ -5,7 +5,7 @@
     h1{border:solid 1px;text-align:center}a{display:block;text-align:center}
     div{width:100%;display:flex;justify-content:center}
     #input{width:80%;font-size:20px}button{padding:5px 10px;border:solid 1px;background-color:#CCC;transition:background-color 0.5s}button:hover{background-color:#DDD}button:active{background-color:#BBB}
-    p{background-color:#DDD;width:100%;height:500px;overflow-y:auto}
+    pre{background-color:#DDD;width:100%;height:500px;overflow-y:auto}
     </style></head>
     <body><script src=OLNMLN.js></script>
         <h1>OLNMLN Interpreter written in JavaScript</h1>
@@ -13,7 +13,7 @@
         <div>
             <input type=text id=input><button onclick='run(document.getElementById("input").value),true'>Run</button>
         </div>
-        <p id=out></p>
+        <pre id=out></pre>
         <a href=/>Main site</a>
     </body>
 </html>
