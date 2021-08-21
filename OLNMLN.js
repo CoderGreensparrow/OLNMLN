@@ -59,7 +59,7 @@ function run(code='wCode autwofilled.',console_output_q=false){
             STACK.pop()
         }else if(char=='d'){
             n=STACK.pop()
-            if(n>0&&isNaN(n)==true){i++}
+            if(n>0||isNaN(n)==true){i++}
         }else if(char=='n'){
             n=STACK.pop()
             i+=n
