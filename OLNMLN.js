@@ -15,7 +15,7 @@ function run(code='wCode autwofilled.',console_output_q=false){
     let STACK=[]
     let VAR
     let iteration=0
-    while(char!='s'&&i<code.length&&iteration<10000){
+    while(char!='s'&&i<code.length&&iteration<5000){
         let output=''
         if(char=='\u02C7'){
             i++
@@ -108,6 +108,7 @@ function run(code='wCode autwofilled.',console_output_q=false){
                 }
             }
         }
+        if(console_output_q!=true){console.log(iteration,i,char,STACK,VAR,output)}
         out(output)
         i++
         char=code[i]
