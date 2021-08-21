@@ -13,7 +13,9 @@ function run(code='wCode autwofilled.',console_output_q=false){
     let i=0
     let char=code[i]
     let STACK=[]
-    while(char!='s'&&i<code.length){
+    let VAR
+    let iteration=0
+    while(char!='s'&&i<code.length&&iteration<1000){
         let output=''
         if(char=='\u02C7'){
             i++
@@ -77,9 +79,38 @@ function run(code='wCode autwofilled.',console_output_q=false){
                 i++
                 chars+=code[i]
             }i+=parseFloat(chars)-5
+        }else if(char=='#'){
+            VAR=STACK.pop()
+        }else if(char=='@'){
+            STACK.push(VAR)
+        }else if(char=='&'){
+            output+=VAR
+        }else if(char=='.'){VAR++}
+        else if(char==','){VAR--}
+        else if(char==':'){
+            VAR+=STACK.pop()
+        }else if(char=='='){
+            if(STACK.pop()==STACK.pop()){i++}
+        }else if(char=='?'){
+            for(j of prompt()){STACK.append(j)}
+        }else if(char=='}'){
+            STACK.append(parseFloat(STACK.pop()))
+        }else if(char==')'){
+            STACK.append(String(STACK.pop()))
+        }else{
+            if(64<char.charCodeAt(0)<91){
+                let found_pair=false
+                for(let j=0;j<code.length;j++){
+                    if(char==code[j]&&j!=i){
+                        i=j
+                        break
+                    }
+                }
+            }
         }
         out(output)
         i++
         char=code[i]
+        iteration++
     }
 }
