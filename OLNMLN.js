@@ -92,11 +92,11 @@ function run(code='wCode autwofilled.',console_output_q=false){
         }else if(char=='='){
             if(STACK.pop()==STACK.pop()){i++}
         }else if(char=='?'){
-            for(j of prompt()){STACK.append(j)}
+            for(j of prompt()){STACK.push(j)}
         }else if(char=='}'){
-            STACK.append(parseFloat(STACK.pop()))
+            STACK.push(parseFloat(STACK.pop()))
         }else if(char==')'){
-            STACK.append(String(STACK.pop()))
+            STACK.push(String(STACK.pop()))
         }else{
             if(64<char.charCodeAt(0)<91){
                 let found_pair=false
