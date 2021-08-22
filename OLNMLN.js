@@ -1,6 +1,6 @@
 function run(code='wCode autwofilled.',console_output_q=false){
     function resetout(){
-        if(console_output_q==true){console.log('\n-----\nCONSOLE RESET\n-----\n')}else{document.getElementById('out').innerHTML=''}
+        if(console_output_q==true){console.clear()}else{document.getElementById('out').innerHTML=''}
     }
     function out(val){
         if(console_output_q==true){
@@ -8,6 +8,11 @@ function run(code='wCode autwofilled.',console_output_q=false){
         }else{
             document.getElementById('out').innerHTML+=val
         }
+    }
+    function isNaN(n){
+        if(typeof(n)==typeof('')){return true}
+        else if(typeof(n)==typeof(undefined)){return true}
+        else if(typeof(n)==typeof(0)){return false}
     }
     resetout()
     let i=0
