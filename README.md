@@ -11,7 +11,6 @@ It works in the CLI and has several modes
 ## JavaScript
 ### by CoderGreensparrow
 A simpler version that can use DOM. Used on the Pages site of this repo.<br>
-**It is not complete**
 
 # Contribution
 If you want to contribute, create an interpreter in a language the is NOT considered "Other" by GitHub and write a few words about it in the above section.<br>
