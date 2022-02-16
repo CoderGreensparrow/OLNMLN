@@ -16,7 +16,9 @@ A simpler version that can use DOM. Used on the Pages site of this repo.<br>
 If you want to contribute, create an interpreter in a language the is NOT considered "Other" by GitHub and write a few words about it in the above section.<br>
 #### How to write
 If the language isn't already listed:<br>
-`##Language name`<br>
+```
+##Language name
+```
 If it is:<br>
 ```
 ###by YourUsername
